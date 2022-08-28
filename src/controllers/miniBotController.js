@@ -32,7 +32,7 @@ let getWebhook = (req, res) => {
 
 let postWebhook = (req, res) => {
     let body = req.body;
-    if (body.object === "page") {
+    if (body.object === 'page') {
         //Iterates over each entry - there may be multiple if batched
         body.entry.forEach(function(entry) {
 
@@ -43,10 +43,10 @@ let postWebhook = (req, res) => {
             // Get the sender PSID
             let sender_psid = webhook_event.sender.id;
             console.log('Sender PSID: ' + sender_psid);
-            
+
         });
         // Returns a '200 OK' response to all requests
-        res.status(200).send("EVENT_RECEIVED");
+        res.status(200).send('EVENT_RECEIVED');
 
         // Determine which webhooks were triggered and get sender PSIDs and locale, message content and more.
 
